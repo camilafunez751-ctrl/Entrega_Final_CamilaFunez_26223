@@ -1,0 +1,368 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f1f5f9;
+    color: #263445;
+}
+
+.contenedor {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 240px;
+    background: linear-gradient(180deg, #172b43, #243f5c);
+    color: white;
+    padding: 32px 20px;
+    flex-shrink: 0;
+}
+
+.sidebar h2 {
+    font-size: 25px;
+    margin-bottom: 42px;
+    letter-spacing: 0.5px;
+}
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sidebar a {
+    color: #d5dfeb;
+    text-decoration: none;
+    padding: 14px 16px;
+    border-radius: 9px;
+    transition: 0.25s;
+    font-size: 15px;
+}
+
+.sidebar a:hover,
+.sidebar a.activo {
+    background: #3d5d7e;
+    color: white;
+}
+
+.contenido {
+    flex: 1;
+    padding: 38px;
+    min-width: 0;
+}
+
+.encabezado {
+    margin-bottom: 32px;
+}
+
+.encabezado h1 {
+    color: #172b43;
+    font-size: 29px;
+    margin-bottom: 8px;
+}
+
+.encabezado p {
+    color: #7b8798;
+    font-size: 15px;
+}
+
+.resumen {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.tarjeta {
+    background: white;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 4px 15px rgba(23, 43, 67, 0.06);
+    border: 1px solid #e8edf3;
+    transition: 0.25s;
+}
+
+.tarjeta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 20px rgba(23, 43, 67, 0.10);
+}
+
+.tarjeta h3 {
+    color: #77869a;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 18px;
+}
+
+.tarjeta p {
+    color: #1c4265;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.tabla-articulos {
+    background: white;
+    margin-top: 32px;
+    padding: 28px;
+    border-radius: 14px;
+    box-shadow: 0 4px 15px rgba(23, 43, 67, 0.06);
+    border: 1px solid #e8edf3;
+    overflow-x: auto;
+}
+
+.tabla-encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    gap: 15px;
+}
+
+.tabla-encabezado h2 {
+    color: #172b43;
+    font-size: 21px;
+}
+
+#btnNuevoArticulo {
+    background: #1d496d;
+    color: white;
+    border: none;
+    padding: 12px 19px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.25s;
+}
+
+#btnNuevoArticulo:hover {
+    background: #28648f;
+    transform: translateY(-1px);
+}
+
+.buscador {
+    margin-bottom: 22px;
+}
+
+#buscarArticulo {
+    width: 100%;
+    max-width: 420px;
+    padding: 13px 16px;
+    border: 1px solid #dce4ed;
+    border-radius: 9px;
+    font-size: 14px;
+    outline: none;
+    background: #f8fafc;
+    transition: 0.2s;
+}
+
+#buscarArticulo:focus {
+    border-color: #3978a8;
+    box-shadow: 0 0 0 3px rgba(57, 120, 168, 0.12);
+    background: white;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 700px;
+}
+
+thead {
+    background: #edf3f8;
+}
+
+th, td {
+    padding: 16px;
+    text-align: left;
+    border-bottom: 1px solid #edf0f4;
+}
+
+th {
+    color: #52677e;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+td {
+    font-size: 14px;
+    color: #405166;
+}
+
+tbody tr:nth-child(even) {
+    background: #fafbfd;
+}
+
+tbody tr:hover {
+    background: #edf5fb;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 31, 48, 0.58);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    z-index: 1000;
+    backdrop-filter: blur(3px);
+}
+
+.modal-contenido {
+    background: white;
+    width: 100%;
+    max-width: 480px;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
+    animation: aparecer 0.2s ease;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-contenido h2 {
+    color: #172b43;
+    margin-bottom: 25px;
+    font-size: 22px;
+}
+
+#formArticulo {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#formArticulo label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #526174;
+}
+
+#formArticulo input,
+#formArticulo select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #dce4ed;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    outline: none;
+}
+
+#formArticulo input:focus,
+#formArticulo select:focus {
+    border-color: #3978a8;
+    box-shadow: 0 0 0 3px rgba(57, 120, 168, 0.10);
+}
+
+.botones-formulario {
+    display: flex;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.botones-formulario button {
+    flex: 1;
+    padding: 13px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    color: white;
+    background: #1d496d;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.botones-formulario button:hover {
+    opacity: 0.85;
+}
+
+.botones-formulario button:last-child {
+    background: #8492a3;
+}
+
+@media (max-width: 768px) {
+    .contenedor {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .sidebar h2 {
+        margin-bottom: 20px;
+    }
+
+    .sidebar nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .contenido {
+        padding: 20px;
+    }
+
+    .resumen {
+        grid-template-columns: 1fr;
+    }
+
+    .tabla-encabezado {
+        flex-wrap: wrap;
+    }
+
+    .tabla-articulos {
+        padding: 18px;
+    }
+}
+
+/* Botones de acciones */
+.btn-editar,
+.btn-eliminar {
+    border: none;
+    padding: 9px 13px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    margin-right: 7px;
+    transition: 0.2s;
+}
+
+.btn-editar {
+    background: #e1edf7;
+    color: #24577e;
+}
+
+.btn-editar:hover {
+    background: #c9dfef;
+}
+
+.btn-eliminar {
+    background: #fde8e8;
+    color: #c03939;
+}
+
+.btn-eliminar:hover {
+    background: #f8cccc;
+}
+

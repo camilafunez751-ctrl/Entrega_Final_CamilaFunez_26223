@@ -1,0 +1,5 @@
+com\ejemplo\articulos\articulo_api\repository\ArticuloRepository.class
+com\ejemplo\articulos\articulo_api\service\ArticuloServiceImpl.class
+com\ejemplo\articulos\articulo_api\service\ArticuloService.class
+com\ejemplo\articulos\articulo_api\model\Articulo.class
+com\ejemplo\articulos\articulo_api\ArticuloApiApplication.class

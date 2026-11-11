@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gestión de Inventario</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="contenedor">
+    <aside class="sidebar">
+        <h2>Inventario</h2>
+        <nav>
+            <a href="#" class="activo">Dashboard</a>
+            <a href="#">Artículos</a>
+            <a href="#">Categorías</a>
+            <a href="#">Vencimientos</a>
+        </nav>
+    </aside>
+    <main class="contenido">
+        <header class="encabezado">
+            <h1>Panel de control</h1>
+            <p>Bienvenido al sistema de gestión de inventario</p>
+        </header>
+        <section class="resumen">
+            <div class="tarjeta">
+                <h3>Total de artículos</h3>
+                <p id="totalArticulos">0</p>
+            </div>
+            <div class="tarjeta">
+                <h3>Categorías</h3>
+                <p id="totalCategorias">5</p>
+            </div>
+            <div class="tarjeta">
+                <h3>Próximos vencimientos</h3>
+                <p id="proximosVencimientos">0</p>
+            </div>
+        </section>
+        <section class="tabla-articulos">
+            <div class="tabla-encabezado">
+                <h2>Listado de artículos</h2>
+                <button id="btnNuevoArticulo">+ Nuevo artículo</button>
+            </div>
+            <div class="buscador">
+                <input type="text" id="buscarArticulo" placeholder="Buscar artículo por nombre...">
+            </div>
+        <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Categoría</th>
+                <th>Vencimiento</th>
+                <th>Acciones</th>
+                </tr>
+        </thead>
+        <tbody id="tablaArticulos"></tbody>
+        </table>
+        </section>
+        <div id="modalArticulo" class="modal">
+        
+        <div class="modal-contenido">
+        
+        <h2 id="tituloModal">Nuevo artículo</h2>
+        
+        <form id="formArticulo">
+            
+            <input type="hidden" id="idArticulo">
+            <label for="nombre">Nombre del artículo</label>
+            
+            <input type="text" id="nombre" required>
+            <label for="precio">Precio</label>
+            <input type="number" id="precio" step="0.01" min="0" required>
+            <label for="categoria">Categoría</label>
+            <select id="categoria" required>
+            <option value="">Seleccionar categoría</option>
+            </select>
+            <label for="fechaVencimiento">Fecha de vencimiento</label>
+            <input type="date" id="fechaVencimiento">
+            
+    <div class="botones-formulario">
+        <button type="submit" id="btnGuardarArticulo">Guardar artículo</button>
+        <button type="button" id="btnCancelar">Cancelar</button>
+    </div>
+
+        </form>
+        
+        </div>
+        </div>
+            
+    </main>
+        </div>
+        
+        <script src="app.js"></script>
+</body>
+</html>
